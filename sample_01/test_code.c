@@ -1,23 +1,9 @@
 #include "test_code.h"
 
-#if(1 == _DEBUG_)
-#include <stdio.h>
-#endif
-
-static void sort(
-      int A[]
-   ,  int N
-){
-#if(1 == _DEBUG_)
-   printf("\n\nBefore:");
-   for(
-      int i = 0;
-          i < N;
-          i ++
-   ){
-      printf(" %d", A[i]);
-   }
-#endif
+int solution(
+       int A[]
+    ,  int N
+) {
    for(
       int i = 0;
           i < N - 1;
@@ -38,61 +24,31 @@ static void sort(
          }
       }
    }
-#if(1 == _DEBUG_)
-   printf("\nAfter:");
+
+   int result = 1;
    for(
       int i = 0;
           i < N;
           i ++
    ){
-      printf(" %d", A[i]);
-   }
-#endif
-}
-
-int find_least_missing_number(
-      int A[]
-   ,  int N
-){
-   int result = 1;
-   for(
-      int index = 0;
-          index < N;
-          index ++
-   ){
       if(
             result
-         <  A[index]
+         <  A[i]
       ){
          break;
       }
       else if(
             result
-         == A[index]
+         == A[i]
       ){
          result++;
       }
       else if(
             result
-         >  A[index]
+         >  A[i]
       ){
       }
    }
 
    return result;
-}
-
-int test_code(
-      int A[]
-   ,  int N
-){
-   sort(
-         A
-      ,  N
-   );
-
-   return find_least_missing_number(
-         A
-      ,  N
-   );
 }
