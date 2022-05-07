@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.13)  # CMake version check
 set(CMAKE_CXX_COMPILER "/usr/bin/g++")
 set(CMAKE_C_COMPILER "/usr/bin/gcc")
 
-project(simple_03)                    # Create project "simple_example"
+project(simple_03a)                    # Create project "simple_example"
 
 set(CMAKE_CXX_STANDARD 14)            # Enable c++14 standard
 
@@ -17,5 +17,5 @@ test_cases.c
 
 # Add executable target with source files listed in SOURCE_FILES variable
 add_executable(
-simple_03 ${SOURCE_FILES}
+simple_03a ${SOURCE_FILES}
 )
