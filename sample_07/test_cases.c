@@ -24,5 +24,9 @@ int *A[] = {
 
 int N[NUMBER_OF_TEST_CASES] = {
       sizeof(tc_1)/sizeof(int)
+   ,  sizeof(tc_2)/sizeof(int)
+   ,  sizeof(tc_3)/sizeof(int)
+   ,  sizeof(tc_4)/sizeof(int)
+   ,  sizeof(tc_5)/sizeof(int)
 };
 
