@@ -11,7 +11,7 @@ int solution(
    ,  int N
 ){
    int* p_c = (int*)calloc(M+1, sizeof(int));
-   int i = 0;
+   int i;
    for(
       i = 0;
       i < N;
