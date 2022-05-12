@@ -1,9 +1,6 @@
-#include "test_code.h"
-#include "test_cases.h"
-
-#if(1 == _DEBUG_)
 #include <stdio.h>
-#endif
+#include "test_cases.h"
+#include "test_code.h"
 
 int main(void){
    for(
@@ -11,15 +8,11 @@ int main(void){
           tc_index < NUMBER_OF_TEST_CASES;
           tc_index ++
    ){
-      int result = solution(
+      int tc_result = solution(
             A[tc_index]
          ,  N[tc_index]
       );
-#if(1 == _DEBUG_)
-      printf("\nTest case %d result: %d", tc_index+1, result);
-#endif
+      printf("\ntc_result[%d] = %d", tc_index+1, tc_result);
    }
-#if(1 == _DEBUG_)
    printf("\n");
-#endif
 }
