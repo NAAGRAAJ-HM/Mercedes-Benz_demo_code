@@ -1,4 +1,4 @@
-#include "test_code.h"
+#include "solution.h"
 #include "test_cases.h"
 
 #if(1 == _DEBUG_)

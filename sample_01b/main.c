@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "test_cases.h"
-#include "test_code.h"
+#include "solution.h"
 
 int main(void){
    for(
