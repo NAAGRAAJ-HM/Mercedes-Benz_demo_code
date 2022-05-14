@@ -12,7 +12,7 @@
 
 #include <stdlib.h>
 int cmpfunc(const void* a, const void* b){return((long)*(int*)a-(long)*(int*)b);}
-int solution(int A[], int N){
+int solution(int A[],int N){
    int i;
    if(3<=N){
       qsort(&A[0],N,sizeof(int),cmpfunc);
