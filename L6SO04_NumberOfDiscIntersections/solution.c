@@ -7,17 +7,18 @@
 #define l  0
 #define Cm 0
 #define CM 2147483647
-
-#define R 10000000
 #define mx(a,b) (((a)<(b))?(a):(b))
 #define mn(a,b) (((a)<(b))?(a):(b))
+
+#include <stdlib.h>
+#define R 10000000
 int solution(int A[],int N){
    int i,t=N-1,r=0;
-   if(N<=0)return 0;
+   if(0>=N)return 0;
    int* dps=(int*)calloc(N,sizeof(int));
    int* dpe=(int*)calloc(N,sizeof(int));
    for(i=0;i<N;i++){
-      int s=mx(i-A[i],0);
+      int s=(A[i]<i)?i-A[i]:0;
       int e=t-i>A[i]?i+A[i]:t; //TBD?
       dps[s]++;
       dpe[e]++;
