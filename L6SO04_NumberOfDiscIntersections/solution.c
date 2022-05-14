@@ -9,16 +9,34 @@
 #define CM 2147483647
 
 #define R 10000000
+#define mx(a,b) (((a)<(b))?(a):(b))
 #define mn(a,b) (((a)<(b))?(a):(b))
 int solution(int A[],int N){
-   int r=0;
+   int i,t=N-1,r=0;
    if(N<=0)return 0;
-   for(int i=0;i<N;i++){
-      int c_i=mn(A[i],N-i-1);
-      int r_i=i+c_i;
-      for(int j=r_i+1;j<N;j++)if((j-A[j])<=r_i)c_i++;
-      r+=c_i;
-      if(R<r)return -1;
+   int* dps=(int*)calloc(N,sizeof(int));
+   int* dpe=(int*)calloc(N,sizeof(int));
+   for(i=0;i<N;i++){
+      int s=mx(i-A[i],0);
+      int e=t-i>A[i]?i+A[i]:t; //TBD?
+      dps[s]++;
+      dpe[e]++;
    }
+   t=0;
+   for(i=0;i<N;i++){
+      if(0<dps[i]){
+         r+=t*dps[i];
+         r+=dps[i]*(dps[i]-1)/2;
+         if(R<r){
+            free(dps);
+            free(dpe);
+            return -1;
+         }
+         t+=dps[i];
+      }
+      t-=dpe[i];
+   }
+   free(dps);
+   free(dpe);
    return r;
 }
