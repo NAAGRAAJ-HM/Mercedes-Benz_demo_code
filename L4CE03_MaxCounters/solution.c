@@ -36,7 +36,10 @@ struct Results solution(int N,int A[],int M){
 #endif
    for(int K=0;K<M;K++){
       int X=A[K]-1;
-      if(N>X){
+      if(N==X){
+         bc=mc;
+      }
+      else if(N>X){
          if(r.C[X]<bc){
             r.C[X]=bc+1;
          }
@@ -46,9 +49,6 @@ struct Results solution(int N,int A[],int M){
                mc=r.C[X];
             }
          }
-      }
-      else{
-         bc=mc;
       }
 #if(1 == _DEBUG_)
       printf("\nA[%d]=%d X=%d mc=%d bc=%d", K, A[K], X, mc, bc);
